@@ -1,0 +1,22 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family:Microsoft yahei;
+}
+/*@font-face{
+	font-family: FZZYJW;
+	src:url("../font/FZZYJW.TTF");
+}*/
+html{font-size:10px;height:100%;width:100%;overflow:auto;}
+/*body{background: #ecf2f6}*/
+body{height:100%;width:100%;}
+@media screen and (max-width:320px) {html{font-size:9px;-webkit-text-size-adjust: none;}}
+
+
+
+.link_url{
+	display:block;
+	width:100%;
+	height:100%;
+}

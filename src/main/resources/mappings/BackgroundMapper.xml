@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.display.maven.display.dao.BackgroundMapper" >
+  <resultMap id="BaseResultMap" type="com.display.maven.display.domain.Background" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="bgname" property="bgname" jdbcType="VARCHAR" />
+
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="dlt" property="dlt" jdbcType="INTEGER" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bgname,  type, dlt, createtime, updatetime, remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from background
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="getAllBigBg" resultMap="BaseResultMap">
+  	select * from background where dlt=0 and type=2
+  </select>
+  <!-- 通过名字查背景 -->
+  <select id="getBackgroundByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  select * from background where dlt=0 and type=2 and bgname = #{bgname,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from background
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertSelective" parameterType="com.display.maven.display.domain.Background" >
+    insert into background
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bgname != null" >
+        bgname,
+      </if>
+
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="dlt != null" >
+        dlt,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bgname != null" >
+        #{bgname,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dlt != null" >
+        #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.display.maven.display.domain.Background" >
+    update background
+    <set >
+      <if test="bgname != null" >
+        bgname = #{bgname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dlt != null" >
+        dlt = #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

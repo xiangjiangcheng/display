@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.display.maven.display.dao.ModuleTableMapper" >
+  <resultMap id="BaseResultMap" type="com.display.maven.display.domain.ModuleTable" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="excelid" property="excelid" jdbcType="VARCHAR" />
+    <result column="menuid" property="menuid" jdbcType="VARCHAR" />
+    <result column="groupid" property="groupid" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+    <result column="month" property="month" jdbcType="INTEGER" />
+    <result column="day" property="day" jdbcType="INTEGER" />
+    <result column="week" property="week" jdbcType="INTEGER" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="dlt" property="dlt" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id,excelid, menuid, groupid, year, month, day, week, file_name, dlt, remark, createtime, 
+    updatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from module_table
+    where id = #{id,jdbcType=VARCHAR} and dlt=0
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from module_table
+    where id = #{id,jdbcType=VARCHAR} and dlt=0
+  </delete>
+  <insert id="insertSelective" parameterType="com.display.maven.display.domain.ModuleTable" >
+    insert into module_table
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="excelid != null" >
+        excelid,
+      </if>
+      <if test="menuid != null" >
+        menuid,
+      </if>
+      <if test="groupid != null" >
+        groupid,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+      <if test="month != null" >
+        month,
+      </if>
+      <if test="day != null" >
+        day,
+      </if>
+      <if test="week != null" >
+        week,
+      </if>
+      <if test="fileName != null" >
+        file_name,
+      </if>
+      <if test="dlt != null" >
+        dlt,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="excelid != null" >
+        #{excelid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuid != null" >
+        #{menuid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="month != null" >
+        #{month,jdbcType=INTEGER},
+      </if>
+      <if test="day != null" >
+        #{day,jdbcType=INTEGER},
+      </if>
+      <if test="week != null" >
+        #{week,jdbcType=INTEGER},
+      </if>
+      <if test="fileName != null" >
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.display.maven.display.domain.ModuleTable" >
+    update module_table
+    <set >
+    <if test="excelid != null" >
+        excelid = #{excelid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuid != null" >
+        menuid = #{menuid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="month != null" >
+        month = #{month,jdbcType=INTEGER},
+      </if>
+      <if test="day != null" >
+        day = #{day,jdbcType=INTEGER},
+      </if>
+      <if test="week != null" >
+        week = #{week,jdbcType=INTEGER},
+      </if>
+      <if test="fileName != null" >
+        file_name = #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        dlt = #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="getModuleByYearAndMonth" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" />
+   from module_table
+   where 
+   <if test="year!=null">
+   	year=#{year} and
+   </if>
+   <if test="month!=null">
+   	month=#{month} and
+   </if>
+   <if test="menuid!=null">
+   	menuid=#{menuid} and
+   </if>
+   <if test="day!=null">
+   	day=#{day} and
+   </if>
+   <if test="week!=null">
+   	week=#{week} and
+   </if>
+   dlt=0 
+  </select>
+  
+  <select id="getModuleTableByMeneId" resultMap="BaseResultMap">
+  select 
+  <include refid="Base_Column_List" /> 
+  from module_table 
+  where 
+  groupid=#{groupid} and menuid=#{menuid} 
+  <if test = "remark != null || remark != '' ">
+  and remark LIKE CONCAT('%',#{remark},'%')
+  </if>
+  and dlt=0
+  order by updatetime desc
+  
+  </select>
+</mapper>

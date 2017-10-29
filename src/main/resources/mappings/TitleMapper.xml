@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.display.maven.display.dao.TitleMapper" >
+  <resultMap id="BaseResultMap" type="com.display.maven.display.domain.Title" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="groupid" property="groupid" jdbcType="VARCHAR" />
+    <result column="title1" property="title1" jdbcType="VARCHAR" />
+    <result column="title2" property="title2" jdbcType="VARCHAR" />
+    <result column="group_st_bgcolor" property="groupStBgcolor" jdbcType="VARCHAR" />
+    <result column="dlt" property="dlt" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="backgroundid" property="backgroundid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, groupid, title1, title2, group_st_bgcolor, dlt, remark, createtime, updatetime, 
+    backgroundid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from title
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+   <!-- 获取各班组全部的title -->
+  <select id="getAllTitle" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select * from title where dlt = 0 and remark = 1 and groupid=#{groupid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from title
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.display.maven.display.domain.Title" >
+    insert into title (id, groupid, title1, 
+      title2, group_st_bgcolor, dlt, 
+      remark, createtime, updatetime, 
+      backgroundid)
+    values (#{id,jdbcType=VARCHAR}, #{groupid,jdbcType=VARCHAR}, #{title1,jdbcType=VARCHAR}, 
+      #{title2,jdbcType=VARCHAR}, #{groupStBgcolor,jdbcType=VARCHAR}, #{dlt,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{backgroundid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.display.maven.display.domain.Title" >
+    insert into title
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="groupid != null" >
+        groupid,
+      </if>
+      <if test="title1 != null" >
+        title1,
+      </if>
+      <if test="title2 != null" >
+        title2,
+      </if>
+      <if test="groupStBgcolor != null" >
+        group_st_bgcolor,
+      </if>
+      <if test="dlt != null" >
+        dlt,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="backgroundid != null" >
+        backgroundid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="title1 != null" >
+        #{title1,jdbcType=VARCHAR},
+      </if>
+      <if test="title2 != null" >
+        #{title2,jdbcType=VARCHAR},
+      </if>
+      <if test="groupStBgcolor != null" >
+        #{groupStBgcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backgroundid != null" >
+        #{backgroundid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.display.maven.display.domain.Title" >
+    update title
+    <set >
+      <if test="groupid != null" >
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="title1 != null" >
+        title1 = #{title1,jdbcType=VARCHAR},
+      </if>
+      <if test="title2 != null" >
+        title2 = #{title2,jdbcType=VARCHAR},
+      </if>
+      <if test="groupStBgcolor != null" >
+        group_st_bgcolor = #{groupStBgcolor,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        dlt = #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="backgroundid != null" >
+        backgroundid = #{backgroundid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.display.maven.display.domain.Title" >
+    update title
+    set groupid = #{groupid,jdbcType=VARCHAR},
+      title1 = #{title1,jdbcType=VARCHAR},
+      title2 = #{title2,jdbcType=VARCHAR},
+      group_st_bgcolor = #{groupStBgcolor,jdbcType=VARCHAR},
+      dlt = #{dlt,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      backgroundid = #{backgroundid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

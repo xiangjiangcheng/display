@@ -1,0 +1,68 @@
+.contain {
+            background-image: url('../../img/huidi.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            /*background-position: right bottom ;*/
+            background-attachment: fixed;
+        }
+
+        .logo_img {
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            width:500px;
+            height:100%;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        .contain>.return{
+            width:125px;
+            padding:20px 0 0 50px;
+                position: absolute;
+        }
+        .return a{
+            float:left;
+        }
+        .main_box>.slider{
+            width:500px;
+             margin-top: 20px;
+              float:left;
+              position: absolute;
+        }
+        .slider div{
+            width:100%;
+            height:500px;
+        }
+        .slider>.tag{
+            margin-top:25px;
+            font-weight: bold;
+        }
+        .slider>.contex{
+            color:#fff;
+            font-size:14px;
+                margin-top: 40px;
+        }
+        .slider>.contex_special{
+            color:#333333;
+            font-size:14px;
+                margin-top: 40px;
+        }
+        .main>.main_box{
+            width:1000px;
+            float:left;
+            height:100%;
+            position: relative;
+        }
+        .slider_one{
+            left:0;
+        }
+        .slider_two{
+            left:500px;
+        }
+        .slider>.uname{
+            background: #fff;
+    text-align: -webkit-center;
+    height: 40px;
+    line-height: 40px;
+        }

@@ -1,0 +1,106 @@
+.contain{
+background-image: url('../../img/huidi.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            /*background-position: right bottom ;*/
+            background-attachment: fixed;
+}
+.contain>.header_top{
+	width:100%;
+	height:85px;
+    line-height:85px;
+    background: #354052;
+}
+.contain>.header_bottom{
+    width: 100%;
+    height: 48px;
+    background: #fff;
+    padding-top: 6px;
+    padding-left: 73px;
+}
+.header_top>.return{
+    display: block;
+    margin-left: 40px;
+    float: left;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    top: 21px;
+}
+.return>img{
+    height:40px;
+}
+.header_top>p{
+   color: #119d83;
+    font-size: 3rem;
+    text-align: -webkit-center;
+    text-align: center;
+    font-size: 2.5vw;
+}
+.font{
+        font-family: 'Arial Bold', 'Arial';
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.input-group[class*=col-] {
+    float: left;
+    padding-right: 0;
+    padding-left: 0;
+}
+.into{
+    float: left;
+    margin: -22px 11px;
+    height: 34px;
+    line-height: 34px;
+}
+.add_intribute{
+    margin-left: 25px;
+    margin-top: -19px;
+}
+.form-group>.timer{
+    float:left;
+    line-height:34px;
+    margin-right: 10px;
+        font-weight: 100;
+}
+.tab_sumary{
+    width:100%;
+    text-align: center;
+}
+.tab_sumary tr th{
+    text-align: center;
+    color:#fff;
+    padding:5px;
+}
+.tab_sumary tr:nth-child(even){
+        background:#fff;
+    }
+    .tab_sumary tr:nth-child(odd){
+        background:#e2ecf2;
+    }
+.table_bottom{
+    text-align: -webkit-left;
+    text-align:left;
+    color:#ea7073;
+}
+.left{
+    text-align: left;
+}
+.table_bottom>.problem{
+    position: absolute;
+}
+.pro_one{
+    margin-left: 90px;
+}
+caption{
+    color:#43c0b5;
+    font-weight: 500;
+    font-size: 2vw;
+}
+.tables{
+    width: 100%;
+    padding: 20px 40px;
+}
+.tab_sumary tr td{
+    padding:5px;
+}

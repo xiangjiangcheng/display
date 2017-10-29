@@ -1,0 +1,114 @@
+/*paging  */
+@CHARSET "UTF-8";
+.bottom{width: 100% ;height:50px;}
+.bottom .selectbtn{width:20%;height: 50px;line-height: 50px;float: left;font-size: 14px;}
+.bottom .page{width:80%;height: 50px;line-height: 50px;float: left;}
+.bottom .page ul{float: right}
+.bottom .page ul li{float:left;font-size: 14px;padding-left: 10px;}
+.bottom .page ul li button{height: 25px;line-height: 25px;color:#fff;min-width: 20px;background: #D6E4E1;border-radius:5px;}
+.bottom .page ul li button:hover {background: #1ABC9C}
+
+/*table涓婇潰鐨勬悳绱㈠拰鏂板缓button绛夋牱寮�  */
+.title {
+	background: #fff;
+	margin-top: 25px;
+	height: 54px;
+	border: 1px solid #E7EBEB;
+	position: relative;
+}
+.title .c_search {
+	margin: 10px 0 10px 25px;
+	line-height: 30px;
+	float: left;
+}
+
+.c_search div {
+	float: left;
+	margin-left: 5px;
+}
+
+.c_search div span {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.c_search form-control {
+	border-color: #EFEFEF;
+}
+
+.c_search .btn {
+	background: #1ABC9C;
+	cursor: pointer;
+	font-weight: 700;
+	color: #fff;
+	width: 60px;
+}
+
+.title .c_new {
+	width: 100px;
+	height: 30px;
+	float: right;
+	margin: 10px 50px 10px 0px;
+}
+
+.title .c_new .btn {
+	background: #6EC30B;
+	font-weight: 700;
+	color: #fff;
+}
+/* 鍒嗛〉  */
+.bottom {
+	width: 100%;
+	height: 50px;
+}
+
+.bottom .selectbtn {
+	width: 30%;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	font-size: 14px;
+}
+
+.bottom .page {
+	width: 70%;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+
+.bottom .page ul {
+	float: right
+}
+
+.bottom .page ul li {
+	float: left;
+	font-size: 14px;
+	padding-left: 10px;
+}
+
+.bottom .page ul li button {
+	height: 25px;
+	line-height: 25px;
+	color: #fff;
+	min-width: 20px;
+	background: #D6E4E1;
+	border-radius: 5px;
+}
+
+.bottom .page ul li button:hover {
+	background: #1ABC9C
+}
+
+.table, .table th, .table td {
+	border: 1px solid #ccc;
+	text-align: center;
+}
+
+.table th {
+	background-color: #1abc9c ! important;
+}
+
+li {
+	list-style: none;
+}

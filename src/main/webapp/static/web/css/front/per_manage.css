@@ -1,0 +1,104 @@
+.contain{
+    background-color: rgba(255, 255, 255, 1);
+    background-image: url('../../img/background1.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    float:left;
+}
+.contain>.header{
+    width:100%;
+    height: 200px;
+    float:left;
+}
+.header>.header_left{
+    float:left;
+    height:100%;
+    padding-top: 45px;
+}
+.header_left>.back{
+  display: block;
+    width: 65px;
+    height: 65px;
+    margin-left: 15px;
+    float: left;
+        margin-top: 10px;
+}
+.back>.img_left{
+    width: 100%;
+  height: 100%;
+}
+.header_left>.texts{
+    float: left;
+  margin-top: 22px;
+}
+.header>.header_right{
+    float:right;
+    height:100%;
+    padding-top: 50px;
+    padding-right: 100px;
+}
+.header_right>img{
+    width: 279px;
+    height: 79px;
+}
+.header_left>.img_left{
+   margin-left: 15px;
+}
+.header_left>.texts,.header_right>.texts{
+    font-size: 3rem;
+  color: #fff;
+  margin-left: 20px;
+}
+.header_right>.texts{
+    color:darkblue;
+}
+.contain>.content{
+	height: 100%;
+    width: 90%;
+    float: left;
+    margin: 0;
+    margin-left: 5%;
+}
+.link_url>img{
+    width:100%;
+    height:100%;
+}
+.content>.img_next{
+	margin-top:150px;
+}
+.link_url{
+    position: relative;
+}
+.link_url>.text_indent{
+	bottom: 12%;
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    position: absolute;
+    width: 100%;
+    text-align: -webkit-center;
+    text-align:center;
+}
+.link_url>.text_intro{
+	width: 100%;
+    text-align: -webkit-center;
+    text-align:center;
+	 bottom: 12%; 
+	 color: rgb(255, 255, 255);
+	  font-size: 2vw;
+	   position: absolute;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+.link_url>.img_box{
+    position: absolute;
+    width: 100%;
+    text-align: -webkit-center;
+    top: 13%;
+}
+.img_box>.img{
+        width: 55%;
+}

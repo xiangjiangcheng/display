@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.display.maven.display.dao.MenuConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.display.maven.display.domain.MenuConfig" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="pid" property="pid" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="ishide" property="ishide" jdbcType="INTEGER" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="backgroundid" property="backgroundid" jdbcType="VARCHAR" />
+    <result column="iconid" property="iconid" jdbcType="VARCHAR" />
+    <result column="groupid" property="groupid" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="orderby" property="orderby" jdbcType="INTEGER" />
+    <result column="size" property="size" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="dlt" property="dlt" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pid, title, ishide, url, backgroundid, iconid, groupid, level, orderby, size, 
+    type, dlt, remark, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from menuconfig
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+<!-- 根据level查询该级菜单 -->
+  <select id="getMenuByLevel" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from menuconfig
+    where level = #{level,jdbcType=VARCHAR} and dlt = 0 and groupid =  #{groupid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from menuconfig
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.display.maven.display.domain.MenuConfig" >
+    insert into menuconfig (id, pid, title, 
+      ishide, url, backgroundid, 
+      iconid, groupid, level, 
+      orderby, size, type, 
+      dlt, remark, createtime, 
+      updatetime)
+    values (#{id,jdbcType=VARCHAR}, #{pid,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{ishide,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{backgroundid,jdbcType=VARCHAR}, 
+      #{iconid,jdbcType=VARCHAR}, #{groupid,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER}, 
+      #{orderby,jdbcType=INTEGER}, #{size,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{dlt,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.display.maven.display.domain.MenuConfig" >
+    insert into menuconfig
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="ishide != null" >
+        ishide,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="backgroundid != null" >
+        backgroundid,
+      </if>
+      <if test="iconid != null" >
+        iconid,
+      </if>
+      <if test="groupid != null" >
+        groupid,
+      </if>
+      <if test="level != null" >
+        level,
+      </if>
+      <if test="orderby != null" >
+        orderby,
+      </if>
+      <if test="size != null" >
+        size,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="dlt != null" >
+        dlt,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="ishide != null" >
+        #{ishide,jdbcType=INTEGER},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="backgroundid != null" >
+        #{backgroundid,jdbcType=VARCHAR},
+      </if>
+      <if test="iconid != null" >
+        #{iconid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        #{level,jdbcType=INTEGER},
+      </if>
+      <if test="orderby != null" >
+        #{orderby,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        #{size,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dlt != null" >
+        #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.display.maven.display.domain.MenuConfig" >
+    update menuconfig
+    <set >
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="ishide != null" >
+        ishide = #{ishide,jdbcType=INTEGER},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="backgroundid != null" >
+        backgroundid = #{backgroundid,jdbcType=VARCHAR},
+      </if>
+      <if test="iconid != null" >
+        iconid = #{iconid,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null" >
+        level = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="orderby != null" >
+        orderby = #{orderby,jdbcType=INTEGER},
+      </if>
+      <if test="size != null" >
+        size = #{size,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="dlt != null" >
+        dlt = #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.display.maven.display.domain.MenuConfig" >
+    update menuconfig
+    set pid = #{pid,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      ishide = #{ishide,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      backgroundid = #{backgroundid,jdbcType=VARCHAR},
+      iconid = #{iconid,jdbcType=VARCHAR},
+      groupid = #{groupid,jdbcType=VARCHAR},
+      level = #{level,jdbcType=INTEGER},
+      orderby = #{orderby,jdbcType=INTEGER},
+      size = #{size,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      dlt = #{dlt,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

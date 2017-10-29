@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.display.maven.display.dao.SmallInnovateMapper" >
+  <resultMap id="BaseResultMap" type="com.display.maven.display.domain.SmallInnovate" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="groupid" property="groupid" jdbcType="VARCHAR" />
+    <result column="menuid" property="menuid" jdbcType="VARCHAR" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="achievementname" property="achievementname" jdbcType="VARCHAR" />
+    <result column="mainpersons" property="mainpersons" jdbcType="VARCHAR" />
+    <result column="achievementcost" property="achievementcost" jdbcType="VARCHAR" />
+    <result column="pictureids" property="pictureids" jdbcType="VARCHAR" />
+    <result column="dlt" property="dlt" jdbcType="INTEGER" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.display.maven.display.domain.SmallInnovateWithBLOBs" extends="BaseResultMap" >
+    <result column="achievementdetails" property="achievementdetails" jdbcType="LONGVARCHAR" />
+    <result column="achievementsummary" property="achievementsummary" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, groupid, menuid, title, achievementname, mainpersons, achievementcost, pictureids, 
+    dlt, remark, createtime, updatetime
+  </sql>
+  <sql id="Blob_Column_List" >
+    achievementdetails, achievementsummary
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from small_innovate
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from small_innovate
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.display.maven.display.domain.SmallInnovateWithBLOBs" >
+    insert into small_innovate (id, groupid, menuid, 
+      title, achievementname, mainpersons, 
+      achievementcost, pictureids, dlt, 
+      remark, createtime, updatetime, 
+      achievementdetails, achievementsummary
+      )
+    values (#{id,jdbcType=VARCHAR}, #{groupid,jdbcType=VARCHAR}, #{menuid,jdbcType=VARCHAR}, 
+      #{title,jdbcType=VARCHAR}, #{achievementname,jdbcType=VARCHAR}, #{mainpersons,jdbcType=VARCHAR}, 
+      #{achievementcost,jdbcType=VARCHAR}, #{pictureids,jdbcType=VARCHAR}, #{dlt,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{achievementdetails,jdbcType=LONGVARCHAR}, #{achievementsummary,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.display.maven.display.domain.SmallInnovateWithBLOBs" >
+    insert into small_innovate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="groupid != null" >
+        groupid,
+      </if>
+      <if test="menuid != null" >
+        menuid,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="achievementname != null" >
+        achievementname,
+      </if>
+      <if test="mainpersons != null" >
+        mainpersons,
+      </if>
+      <if test="achievementcost != null" >
+        achievementcost,
+      </if>
+      <if test="pictureids != null" >
+        pictureids,
+      </if>
+      <if test="dlt != null" >
+        dlt,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="achievementdetails != null" >
+        achievementdetails,
+      </if>
+      <if test="achievementsummary != null" >
+        achievementsummary,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null" >
+        #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuid != null" >
+        #{menuid,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="achievementname != null" >
+        #{achievementname,jdbcType=VARCHAR},
+      </if>
+      <if test="mainpersons != null" >
+        #{mainpersons,jdbcType=VARCHAR},
+      </if>
+      <if test="achievementcost != null" >
+        #{achievementcost,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureids != null" >
+        #{pictureids,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="achievementdetails != null" >
+        #{achievementdetails,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="achievementsummary != null" >
+        #{achievementsummary,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.display.maven.display.domain.SmallInnovateWithBLOBs" >
+    update small_innovate
+    <set >
+      <if test="groupid != null" >
+        groupid = #{groupid,jdbcType=VARCHAR},
+      </if>
+      <if test="menuid != null" >
+        menuid = #{menuid,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="achievementname != null" >
+        achievementname = #{achievementname,jdbcType=VARCHAR},
+      </if>
+      <if test="mainpersons != null" >
+        mainpersons = #{mainpersons,jdbcType=VARCHAR},
+      </if>
+      <if test="achievementcost != null" >
+        achievementcost = #{achievementcost,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureids != null" >
+        pictureids = #{pictureids,jdbcType=VARCHAR},
+      </if>
+      <if test="dlt != null" >
+        dlt = #{dlt,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="achievementdetails != null" >
+        achievementdetails = #{achievementdetails,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="achievementsummary != null" >
+        achievementsummary = #{achievementsummary,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.display.maven.display.domain.SmallInnovateWithBLOBs" >
+    update small_innovate
+    set groupid = #{groupid,jdbcType=VARCHAR},
+      menuid = #{menuid,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      achievementname = #{achievementname,jdbcType=VARCHAR},
+      mainpersons = #{mainpersons,jdbcType=VARCHAR},
+      achievementcost = #{achievementcost,jdbcType=VARCHAR},
+      pictureids = #{pictureids,jdbcType=VARCHAR},
+      dlt = #{dlt,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      achievementdetails = #{achievementdetails,jdbcType=LONGVARCHAR},
+      achievementsummary = #{achievementsummary,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.display.maven.display.domain.SmallInnovate" >
+    update small_innovate
+    set groupid = #{groupid,jdbcType=VARCHAR},
+      menuid = #{menuid,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      achievementname = #{achievementname,jdbcType=VARCHAR},
+      mainpersons = #{mainpersons,jdbcType=VARCHAR},
+      achievementcost = #{achievementcost,jdbcType=VARCHAR},
+      pictureids = #{pictureids,jdbcType=VARCHAR},
+      dlt = #{dlt,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

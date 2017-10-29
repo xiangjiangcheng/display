@@ -1,0 +1,124 @@
+.contain{
+    background-color: rgba(255, 255, 255, 1);
+    background-image: url('../../img/background1.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    float:left;
+	 background-attachment: fixed;
+    position: static;
+}
+.contain>.contain_box{
+    width:90%;
+    height:100%;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-top: 70px;
+}
+.contain_box>.return{
+    float:left;
+    margin-left: 30px;
+}
+.main{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            margin:0 auto;
+            margin-top: 30px;
+    float: left;
+        }
+        .contain>.return{
+            width:125px;
+            padding:20px 0 0 50px;
+                position: absolute;
+        }
+        .return a{
+            float:left;
+        }
+        .hover>.slider{
+            width:100%;
+             margin-top: 20px;
+              float:left;
+        }
+        .slider>div{
+            width:100%;
+            height:100%;
+                margin-bottom: 20px;
+        }
+        .slider>.tag{
+            margin-top:25px;
+            font-weight: bold;
+        }
+        .slider>.contex{
+            color:#fff;
+            font-size:14px;
+                margin-top: 40px;
+        }
+        .slider>.contex_special{
+            color:#333333;
+            font-size:14px;
+            margin-top: 40px;
+        }
+        .main>.main_box{
+            float:left;
+            position: relative;
+                height: 427px;
+                    margin-bottom: 40px;
+        }
+        .slider>.introduce{
+            background: #fff;
+    
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    margin-bottom: 0px;
+    padding: 15px 6px;
+        }
+        .introduce>.team_intro{
+text-indent: 2em;
+        }
+        .introduce>.team{
+            text-align: center;
+            font-weight: bold;
+        }
+        .main_box>.hover{
+            display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+            border-radius: 20px;
+                
+                border-width: 4px;
+    border-style: solid;
+
+        }
+        .main_box>.hover1{
+            color: rgba(51, 153, 0, 1);
+            border-color: rgba(51, 153, 0, 1);
+        }
+        .main_box>.hover2{
+            color:rgba(0, 153, 204, 1);
+             border-color:rgba(0, 153, 204, 1);
+        }
+        .main_box>.hover3{
+            color:rgba(153, 204, 153, 1);
+             border-color:rgba(153, 204, 153, 1);
+        }
+        .main_box>.hover4{
+            color:rgba(204, 204, 153, 1);
+             border-color:rgba(204, 204, 153, 1);
+        }
+        .hover1:hover{
+            border-color: rgba(51, 204, 102, 1);
+        }
+        .hover2:hover{
+            border-color: rgba(0, 153, 255, 1);
+        }
+        .hover3:hover{
+            border-color: rgba(153, 204, 0, 1);
+        }
+        .hover4:hover{
+            border-color: rgba(204, 204, 0, 1);
+        }
+        .logo_img{
+            width: 80%;
+    margin-left: 10%;
+        }

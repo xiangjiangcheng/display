@@ -1,0 +1,73 @@
+.contain{
+background-image: url('../../img/huidi.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            /*background-position: right bottom ;*/
+            background-attachment: fixed;
+}
+.contain>.header_top{
+	width:100%;
+	height:85px;
+    line-height:85px;
+    background: #354052;
+}
+.header_top>.return{
+    display: block;
+    margin-left: 40px;
+    float: left;
+    position: absolute;
+    height: 40px;
+    line-height: 40px;
+    top: 21px;
+}
+.return>img{
+    height:40px;
+}
+.header_top>p{
+   color: #fff;
+    font-size: 3rem;
+    text-align: -webkit-center;
+    text-align: center;
+    font-size: 2.5vw;
+}
+.contain>.main{
+    width:100%;
+}
+.main>.main_box{
+    margin: 67px 58px;
+}
+.main_box>.box_one{
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 67px;
+}
+.box_one>.img_box{
+    float: left;
+    padding: 25px;
+    width: 14%;
+}
+.img_box>img{
+    width:100%;
+}
+.box_one>.content{
+    float: left;
+    padding-top: 20px;
+    width: 86%;
+}
+.content>.name{
+    color: #3fbcb1;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+.name>span,.intro>span{
+    margin-right: 10px;
+}
+.name>span img,.intro>span img{
+        margin-top: -8px;
+}
+.content>.intro{
+        margin-top: 20px;
+            font-size: 1.2vw;
+}
